@@ -4,5 +4,5 @@ if N < 3:
     print(ls[N-1])
 else:
     for i in range(3, N):
-        ls[i] = ls[i-1] + 2 * ls[i-2]
+        ls[i] = ls[i-1] % 10007 + (2 * ls[i-2]) % 10007
     print(ls[N-1] % 10007)
