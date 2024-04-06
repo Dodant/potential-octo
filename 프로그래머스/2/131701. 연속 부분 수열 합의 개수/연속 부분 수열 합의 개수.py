@@ -1,16 +1,12 @@
 from collections import deque
 
 def solution(elements):
-    original = elements
-    elements = deque(elements)
-    numbers = set()
     l = len(elements)
+    elements = elements * 2
+    numbers = set()
     
-    for i in range(1, l+1):
-        elements = deque(original)
-        for _ in range(l):
-            numbers.add(sum(list(elements)[:i]))
-            elements.append(elements.popleft())
-        original = elements
-
+    for i in range(l):
+        for j in range(i, l+i):
+            numbers.add(sum(elements[i:j+1]))
+    # print(numbers)
     return len(numbers)
