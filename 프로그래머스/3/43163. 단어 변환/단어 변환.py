@@ -2,7 +2,7 @@ from collections import deque
 
 def solution(begin, target, words):
     if target not in words: return 0
-    if begin in words: return 1
+    if begin in words: return 0
     q = deque([begin])
     letter_n = len(begin)
 
